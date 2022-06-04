@@ -111,9 +111,6 @@ def mars_hemispheres(browser):
         html = browser.html
         hemi_enhanced_soup = soup(html, 'html.parser')
         
-        #img_elem = hemi_enhanced_soup.select_one('ul')
-        #full_img_link = img_elem.find('a', target='_blank').get('href')
-        
         full_img_link = hemi_enhanced_soup.find_all('a', target='_blank', href=True)[2].get('href')
         img_url = f'https://marshemispheres.com/{full_img_link}'
         
